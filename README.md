@@ -2,6 +2,8 @@ PARITY CI
 === 
 ## USAGE
 ```bash
+sudo apt-get install lxd -y
+sudo lxd init 
 git clone https://github.com/rarchk/parityCI
 cd parityCI
 ./provision.sh 

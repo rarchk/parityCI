@@ -1,7 +1,6 @@
-sudo apt-get install lxd -y
-sudo lxd init 
-sudo lxc launch ubuntu:16.04 dockC -p default -p docker
-sudo lxc config set dockC security.privileged true
-sudo lxc restart dockC
-sudo lxc exec dockC -- git clone https://github.com/rarchk/parityCI
-sudo lxc exec dockC -- bash docker_setup.sh 
+sudo su 
+lxc launch ubuntu:16.04 c2 -p default -p docker
+lxc config set c2 security.privileged true
+lxc restart c2
+lxc exec c2 -- git clone https://github.com/rarchk/parityCI
+lxc exec c2 -- bash docker_setup.sh 
