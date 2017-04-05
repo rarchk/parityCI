@@ -38,4 +38,4 @@ echo
 echo "===================="
 echo "Compiling Parity"
 echo "===================="
-sudo docker build --build-arg VERSION=$version .     
+sudo docker build -t parity_client . 

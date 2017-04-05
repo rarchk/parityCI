@@ -1,7 +1,23 @@
+############################################################
+# Dockerfile to build parity client
+# Based on Ubuntu
+############################################################
+
+# Set the base image from ubuntu 
 FROM ubuntu:16.04
+
+# Author
 MAINTAINER Ronak Kogta <rixor786@gmail.com>
-RUN apt-get update && apt-get upgrade -y && apt-get install gcc git pkg-config libssl-dev libudev-dev cargo -y
+
+# Getting Dependencies 
+RUN apt-get update && apt-get upgrade -y && apt-get install gcc git pkg-config libssl-dev libudev-dev -y
+
+##################### PARITY SOURCE CODE ####################
+WORKDIR /code
+ADD . /code 
 RUN git clone https://github.com/paritytech/parity
-ARG VERSION
-RUN cargo build --$VERSION
+
+#################### PARITY COMPILATION #####################
+CMD ./init.sh 
+
 
