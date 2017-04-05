@@ -6,6 +6,7 @@ sudo apt-get install lxd -y
 sudo lxd init 
 git clone https://github.com/rarchk/parityCI
 cd parityCI
+sudo su
 ./provision.sh 
   ```
 It happens in three steps 

@@ -1,4 +1,3 @@
-sudo su 
 lxc launch ubuntu:16.04 c2 -p default -p docker
 lxc config set c2 security.privileged true
 lxc restart c2
