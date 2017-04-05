@@ -8,4 +8,3 @@ expect -c "
 . $HOME/.cargo/env
 cd parity 
 cargo build --release
-

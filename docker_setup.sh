@@ -1,3 +1,4 @@
+cd parityCI
 echo
 echo "===================="
 echo "Starting Docker Engine setup"
