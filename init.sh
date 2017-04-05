@@ -7,4 +7,5 @@ expect -c "
         expect eof"
 . $HOME/.cargo/env
 cd parity 
-cargo build --$PARITY_VERSION
+cargo build --release
+

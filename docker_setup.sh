@@ -37,4 +37,4 @@ echo "===================="
 echo "Compiling Parity"
 echo "===================="
 sudo docker build -t parity . 
-sudo docker run -name parity_client --device /dev/tty -t parity
+sudo docker run --device /dev/tty -t parity
