@@ -10,7 +10,7 @@ FROM ubuntu:16.04
 MAINTAINER Ronak Kogta <rixor786@gmail.com>
 
 # Getting Dependencies 
-RUN apt-get update && apt-get upgrade -y && apt-get install gcc git pkg-config libssl-dev libudev-dev -y
+RUN apt-get update && apt-get upgrade -y && apt-get install gcc git pkg-config libssl-dev libudev-dev curl -y
 
 ##################### PARITY SOURCE CODE ####################
 WORKDIR /code
@@ -19,5 +19,3 @@ RUN git clone https://github.com/paritytech/parity
 
 #################### PARITY COMPILATION #####################
 CMD ./init.sh 
-
-
