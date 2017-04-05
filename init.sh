@@ -1,5 +1,10 @@
-# Install Rust 
-curl https://sh.rustup.rs -sSf | sh
-. .cargo/env
+# Install Rust
+curl https://sh.rustup.rs -sSf > out 
+expect -c "
+        spawn  sh out
+        expect "*"
+        send \"\n\r\"
+        expect eof"
+. $HOME/.cargo/env
 cd parity 
-cargo build --release 
+cargo build --$PARITY_VERSION

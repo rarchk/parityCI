@@ -10,7 +10,7 @@ FROM ubuntu:16.04
 MAINTAINER Ronak Kogta <rixor786@gmail.com>
 
 # Getting Dependencies 
-RUN apt-get update && apt-get upgrade -y && apt-get install gcc git pkg-config libssl-dev libudev-dev curl -y
+RUN apt-get update && apt-get upgrade -y && apt-get install gcc git pkg-config libssl-dev libudev-dev curl expect -y
 
 ##################### PARITY SOURCE CODE ####################
 WORKDIR /code

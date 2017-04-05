@@ -1,5 +1,3 @@
-version=$1
-
 echo
 echo "===================="
 echo "Starting Docker Engine setup"
@@ -38,4 +36,5 @@ echo
 echo "===================="
 echo "Compiling Parity"
 echo "===================="
-sudo docker build -t parity_client . 
+sudo docker build -t parity . 
+sudo docker run -name parity_client --device /dev/tty -t parity
