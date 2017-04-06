@@ -1,3 +1,4 @@
+# this is insecure implementation. Need to have a token based service.  
 file=$1
 key_id="AKIAIZFED73JH3KDM3OQ" 
 key_secret="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"

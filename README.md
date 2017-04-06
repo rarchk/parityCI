@@ -30,13 +30,13 @@ I've tested three drivers for building CI for parityCI, where each had fresh `ub
 
 Latest Build is available at [https://s3.amazonaws.com/my-parity-client/target/release/parity](https://s3.amazonaws.com/my-parity-client/target/release/parity)
 ## Limitations 
-- I tried with micro aws installation, and compilation requirements were not met. It was failing. So needed a big machine with at least 2gb ram with 2 core systems.
+- For build purposes, Host requieres to have greater than 1GB RAM. The build process failed with aws micro-instance which has only 1 GB of RAM.   
 - LXD's privileges have been marked as true, because docker requires all capabilities
-- Currently you cannot input the appropriate versions, as I didn't had enough time. 
-- I faced the problems in autmating rust script, and my first go at aws failed as there was not enough memory 
-- I have not updated the files to a public storage 
-
-
+- There is security problem in `aws_upload.sh` as I have no other efficient way to specify aws credentials for working piece of code. 
+    - May be in this case, we could use hosted service for storing secrets. 
+    - Fun thing was that when I commited the keys to github, I saw mail by aws reporting me of that commit. Just goes to say that they are watching.   
+- Rust installation script shows `yes/no` promts, that needed to be handled via `expect` linux tool.  
+ 
 # Edits 
-1. Improved README
-2. Added S3 storage
+1. more documented README
+2. Added S3 storage for latest builds. 
