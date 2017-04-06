@@ -1,16 +1,13 @@
 echo "########## Installing Rust #############"
-curl https://sh.rustup.rs -sSf > out 
-expect -c "
-        spawn  sh out
-        expect "*"
-        send \"\n\r\"
-        expect eof"
+. ./config.sh 
+apt-get install file sudo curl -y
+curl -s https://static.rust-lang.org/rustup.sh | sh -s -- --channel=$RUST_VERSION
 sleep 1 
+
 echo "########## Building Parity #############"         
-. $HOME/.cargo/env
-sleep 1
-cd parity 
-cargo build --release
+cd parity
+git checkout $PARITY_VERSION 
+cargo build $PARITY_BUILD_FLAGS
 
 echo "########## Uploading to S3 #############"
-sh aws_upload.sh target/release/parity
+sh ../aws_upload.sh target/release/parity

@@ -1,7 +1,7 @@
-# this is insecure implementation. Need to have a token based service.  
+. ./config.sh
 file=$1
-key_id="AKIAIZFED73JH3KDM3OQ" 
-key_secret="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"
+key_id=$AWS_KEY 
+key_secret=$AWS_SECRET
 path="$file"
 bucket="my-parity-client"
 content_type="application/octet-stream"
