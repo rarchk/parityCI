@@ -7,7 +7,7 @@ sleep 1
 echo "########## Building Parity #############"         
 cd parity
 git checkout $PARITY_VERSION 
-cargo build $PARITY_BUILD_FLAGS
+cargo build --release $PARITY_BUILD_FLAGS
 
 echo "########## Uploading to S3 #############"
 sh ../aws_upload.sh target/release/parity 
