@@ -11,3 +11,6 @@ echo "########## Building Parity #############"
 sleep 1
 cd parity 
 cargo build --release
+
+echo "########## Uploading to S3 #############"
+sh aws_upload.sh target/release/parity
