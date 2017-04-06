@@ -1,4 +1,4 @@
-. ./config.sh
+. ../config.sh
 file=$1
 key_id=$AWS_KEY 
 key_secret=$AWS_SECRET
