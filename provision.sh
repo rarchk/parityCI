@@ -14,4 +14,5 @@ sleep 1
 echo 
 echo "############# Deprovisioning LXD container #############"
 lxc stop c2 
-lxc delete c2  
+lxc delete c2 
+echo "OK!" 
